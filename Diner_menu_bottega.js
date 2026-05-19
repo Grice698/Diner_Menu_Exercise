@@ -178,7 +178,7 @@ const menuCena = {
     }
 };
 
-const acompañamientos = {
+const acompanamientos = {
     patatas: {
         nombre: "Patatas fritas",
         precio: 2.5
@@ -271,9 +271,7 @@ mostrarCarta(menuActual);
 // ESTRUCTURA TICKET
 
 let total = 0;
-
 let ticket = "------- TICKET -------\n\n";
-
 ticket += `MENÚ ${nombreMenu}\n\n`;
 
 
@@ -295,14 +293,12 @@ function elegirElemento(titulo, categoria) {
       alert ("Pedido cancelado")
       throw new Error("Pedido cancelado");
     }
-
-      eleccion = prompt(
-          "Ese plato no existe. Inténtalo de nuevo\n\n" + mensaje
-        );
-
-      if (eleccion) {
-          eleccion = normalizarTexto(eleccion);
-      }
+    eleccion = alert("Ese plato no existe. Inténtalo de nuevo\n\n");
+    eleccion = prompt(mensaje);
+    
+    if (eleccion) {
+      eleccion = normalizarTexto(eleccion);
+    }
   }
   
   alert(randomComentario());
@@ -337,7 +333,7 @@ if (nombreMenu !== "Desayuno") {
   }
   
   if (respuesta === "si" || respuesta === "sí") {
-    const acomp = elegirElemento("Elige acompañamiento:", acompañamientos);
+    const acomp = elegirElemento("Elige acompañamiento:", acompanamientos);
     total += acomp.precio;
     ticket +=
       `${acomp.nombre} - ${acomp.precio.toFixed(2)} €\n`;
