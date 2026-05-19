@@ -178,7 +178,7 @@ const menuCena = {
     }
 };
 
-const acompanamientos = {
+const acompañamientos = {
     patatas: {
         nombre: "Patatas fritas",
         precio: 2.5
@@ -337,7 +337,7 @@ if (nombreMenu !== "Desayuno") {
   }
   
   if (respuesta === "si" || respuesta === "sí") {
-    const acomp = elegirElemento("Elige acompañamiento:", acompanamientos);
+    const acomp = elegirElemento("Elige acompañamiento:", acompañamientos);
     total += acomp.precio;
     ticket +=
       `${acomp.nombre} - ${acomp.precio.toFixed(2)} €\n`;
